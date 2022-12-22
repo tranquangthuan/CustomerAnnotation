@@ -13,7 +13,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
 	public CustomerRepositoryImpl() {
 		super();
-		System.out.println("CustomerRepositoryImpl");
+		System.out.println("CustomerRepositoryImpl constructor");
 	}
 
 	@Override
@@ -25,7 +25,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 	@Override
 	public CustomerEntity findById(long id) {
 		// TODO Auto-generated method stub
-		CustomerEntity customerEntity = new CustomerEntity(1, "A", "abc123");
+		CustomerEntity customerEntity = new CustomerEntity(1, "A", "password");
 		return customerEntity;
 	}
 

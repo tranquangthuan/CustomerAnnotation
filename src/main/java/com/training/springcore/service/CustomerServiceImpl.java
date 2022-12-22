@@ -16,7 +16,7 @@ import com.training.springcore.utils.BeanUtils;
 public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
-	@Qualifier(value = "customerExtraRepositoryImpl")
+	@Qualifier(value = "customerRepositoryImpl")
 	private CustomerRepository customerRepository;
 
 	@Autowired
@@ -27,19 +27,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 	public CustomerServiceImpl() {
 		super();
-		System.out.println("CustomerServiceImpl");
-	}
-
-	// @Autowired
-	public CustomerServiceImpl(CustomerRepository customerRepository) {
-		super();
-		System.out.println("DI By constructor 1 arg");
-		this.customerRepository = customerRepository;
-	}
-
-	public void setCustomerRepository(CustomerRepository customerRepository) {
-		System.out.println("DI By Setter");
-		this.customerRepository = customerRepository;
+		System.out.println("CustomerServiceImpl constructor");
 	}
 
 	@Override

@@ -20,6 +20,7 @@ public class AppMainContainer {
 
 		Customer customer = customerService.findById(1);
 		System.out.println(customer);
+		((ClassPathXmlApplicationContext) applicationContext).close();
 	}
 
 }

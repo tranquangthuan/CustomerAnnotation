@@ -13,19 +13,19 @@ public class CustomerExtraRepositoryImpl implements CustomerRepository {
 
 	public CustomerExtraRepositoryImpl() {
 		super();
-		System.out.println("CustomerExtraRepositoryImpl");
+		System.out.println("CustomerExtraRepositoryImpl Constructor");
 	}
 
 	@Override
 	public List<Customer> findAll() {
-		List<Customer> customers = Arrays.asList(new Customer(1, "A"), new Customer(2, "B"));
+		List<Customer> customers = Arrays.asList(new Customer(1, "Extra A"), new Customer(2, "Extra B"));
 		return customers;
 	}
 
 	@Override
 	public CustomerEntity findById(long id) {
 		// TODO Auto-generated method stub
-		CustomerEntity customerEntity = new CustomerEntity(100, "A100", "abc123");
+		CustomerEntity customerEntity = new CustomerEntity(100, "Extra A", "password");
 		return customerEntity;
 	}
 
