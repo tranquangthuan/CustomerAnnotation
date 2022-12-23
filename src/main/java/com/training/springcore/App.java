@@ -13,7 +13,7 @@ public class App {
 	public static void main(String[] args) {
 		System.out.println("Hello World!");
 		CustomerServiceImpl customerServiceImpl = new CustomerServiceImpl();
-		List<Customer> customers = customerServiceImpl.findAll();
+		List<Customer> customers = customerServiceImpl.findAllWithNoDI();
 		customers.forEach(System.out::println);
 	}
 }

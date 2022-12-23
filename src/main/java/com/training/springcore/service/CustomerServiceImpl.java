@@ -10,13 +10,14 @@ import org.springframework.stereotype.Service;
 import com.training.springcore.entity.CustomerEntity;
 import com.training.springcore.model.Customer;
 import com.training.springcore.repository.CustomerRepository;
+import com.training.springcore.repository.CustomerRepositoryImpl;
 import com.training.springcore.utils.BeanUtils;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
-	@Qualifier(value = "customerRepositoryImpl")
+	@Qualifier(value = "customerExtraRepositoryImpl")
 	private CustomerRepository customerRepository;
 
 	@Autowired
@@ -34,6 +35,11 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<Customer> findAll() {
 		beanUtils.display();
 		return customerRepository.findAll();
+	}
+
+	public List<Customer> findAllWithNoDI() {
+		new BeanUtils().display();
+		return new CustomerRepositoryImpl().findAll();
 	}
 
 	@Override
