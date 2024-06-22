@@ -11,7 +11,6 @@ import com.training.springcore.service.CustomerService;
 public class AppMainContainer {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("CustomerAnnotation");
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("context.xml");
 		CustomerService customerService = applicationContext.getBean("customerServiceImpl", CustomerService.class);
