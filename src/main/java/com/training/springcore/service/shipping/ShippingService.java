@@ -1,5 +1,8 @@
 package com.training.springcore.service.shipping;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -13,12 +16,17 @@ public class ShippingService {
 	@Qualifier(value = "GHN")
 	private ShippingProvider shippingProvider;
 
-	@Autowired
-	public ShippingService(@Qualifier(value = "GHTK") ShippingProvider shippingProvider) {
+	public ShippingService() {
 		super();
-		System.out.println("DI BY Constructor");
-		this.shippingProvider = shippingProvider;
+		System.err.println("Constructor No Arg, shippingProvider maybe null " + shippingProvider);
 	}
+
+//	@Autowired
+//	public ShippingService(@Qualifier(value = "GHTK") ShippingProvider shippingProvider) {
+//		super();
+//		System.out.println("DI BY Constructor");
+//		this.shippingProvider = shippingProvider;
+//	}
 
 	@Autowired
 	public void setShippingProvider(@Qualifier(value = "SPE") ShippingProvider shippingProvider) {
@@ -30,4 +38,13 @@ public class ShippingService {
 		return shippingProvider.name();
 	}
 
+	@PostConstruct
+	public void postConstuct() {
+		System.err.println("postConstuct, Dependecies allwasy not null " + shippingProvider);
+	}
+
+	@PreDestroy
+	public void preDestroy() {
+		System.err.println("preDestroy");
+	}
 }

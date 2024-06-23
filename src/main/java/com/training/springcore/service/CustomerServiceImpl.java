@@ -48,5 +48,4 @@ public class CustomerServiceImpl implements CustomerService {
 		Customer customer = modelMapper.map(customerEntity, Customer.class);
 		return customer;
 	}
-
 }
