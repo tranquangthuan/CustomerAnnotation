@@ -6,6 +6,7 @@ import javax.inject.Named;
 import com.training.springcore.cdi.dao.InjectDao;
 
 @Named
+
 public class InjectService {
 	@Inject
 	private InjectDao injectDao;

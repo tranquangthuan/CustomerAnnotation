@@ -5,6 +5,6 @@ import javax.inject.Named;
 @Named
 public class InjectDao {
 	public String insert() {
-		return "insert success by javax.inject";
+		return "insert success by javax.inject V1";
 	}
 }
